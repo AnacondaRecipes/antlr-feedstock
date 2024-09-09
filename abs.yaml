@@ -1,2 +1,4 @@
 upload_channels:
   - sfe1ed40
+channels:
+  - https://staging.continuum.io/prefect/fs/maven-feedstock/pr5/7fe889f
