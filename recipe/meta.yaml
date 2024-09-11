@@ -1,22 +1,15 @@
-{% set patch_level = "-1" %}
-{% set version = "4.13.2" %}
-
-# sometimes part of the tag name (with the hyphen separator).
-# however, this has changed without warning (with a different sha256) in the past...
-# {% set patch_level = "-1" %}
-
+{% set version = "4.9.3" %}
 package:
   name: antlr
-  # this version drives maven options in build.sh/bld.bat
-  # version: {{ version }}{{ patch_level.replace("-", "_") }}
   version: {{ version }}
 
 source:
   url: https://github.com/antlr/antlr{{ version[0] }}/archive/{{ version }}.tar.gz
-  sha256: 9f18272a9b32b622835a3365f850dd1063d60f5045fb1e12ce475ae6e18a35bb
+  sha256: efe4057d75ab48145d4683100fec7f77d7f87fa258707330cadd1f8e6f7eecae
 
 build:
   number: 0
+  skip: true  # [s390x]
 
 requirements:
   build:
