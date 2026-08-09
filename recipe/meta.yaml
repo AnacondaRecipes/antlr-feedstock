@@ -1,19 +1,21 @@
 {% set version = "4.9.3" %}
+{% set name = "antlr" %}
+
 package:
-  name: antlr
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/antlr/antlr{{ version[0] }}/archive/{{ version }}.tar.gz
+  url: https://github.com/{{ name }}/{{ name }}{{ version[0] }}/archive/{{ version }}.tar.gz
   sha256: efe4057d75ab48145d4683100fec7f77d7f87fa258707330cadd1f8e6f7eecae
 
 build:
-  number: 0
-  skip: true  # [s390x]
+  number: 1
 
 requirements:
   build:
     - maven
+    - openjdk 17.*
   run:
     - openjdk
 
